@@ -23,7 +23,7 @@ class GetAwb extends Endpoint
      */
     protected function getApiPath(): string
     {
-        return 'view_awb_integrat.php';
+        return 'view_awb_integrat_pdf.php';
     }
 
     /**

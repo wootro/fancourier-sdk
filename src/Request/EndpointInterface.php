@@ -12,7 +12,7 @@ namespace Infifni\FanCourierApiClient\Request;
 
 interface EndpointInterface
 {
-    const API_BASE_URL = 'https://www.selfawb.ro/';
+    const API_BASE_URL = 'https://www.selfawb.ro/all/';
 
     const API_RESULT_TYPE_CSV = 'csv';
     const API_RESULT_TYPE_PLAIN = 'plain';

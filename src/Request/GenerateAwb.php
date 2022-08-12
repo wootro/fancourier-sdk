@@ -143,8 +143,8 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
             'plata_expeditie' => [
                 'required' => true
             ],
-            'ramburs_bani' => [
-                'required' => true
+            'ramburs' => [
+                'required' => false
             ],
             'plata_ramburs_la' => [
                 'required' => true,
@@ -166,13 +166,13 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
                 'required' => false
             ],
             'nume_destinatar' => [
-                'required' => true
+                'required' => false
             ],
             'persoana_contact' => [
                 'required' => false
             ],
             'telefon' => [
-                'required' => true
+                'required' => false
             ],
             'fax' => [
                 'required' => false
@@ -181,19 +181,19 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
                 'required' => false
             ],
             'judet' => [
-                'required' => true
+                'required' => false
             ],
             'localitate' => [
-                'required' => true
+                'required' => false
             ],
             'strada' => [
-                'required' => true
+                'required' => false
             ],
             'nr' => [
                 'required' => false
             ],
             'cod_postal' => [
-                'required' => true
+                'required' => false
             ],
             'bl' => [
                 'required' => false
@@ -240,41 +240,55 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
     public function getCsvHeaders(): array
     {
         return [
-            'tip_serviciu' => 'Tip serviciu',
-            'banca' => 'Banca',
+            'expeditor_nume' => 'expeditor_nume',
+            'expeditor_persoana_contact' => 'expeditor_persoana_contact', 
+            'expeditor_telefon' => 'expeditor_telefon', 
+            'expeditor_fax' => 'expeditor_fax', 
+            'expeditor_email' => 'expeditor_email', 
+            'expeditor_judet' => 'expeditor_judet', 
+            'expeditor_localitatea' => 'expeditor_localitatea', 
+            'expeditor_strada' => 'expeditor_strada', 
+            'expeditor_nr' => 'expeditor_nr', 
+            'expeditor_cod postal' => 'expeditor_cod postal', 
+            'expeditor_bloc' => 'expeditor_bloc', 
+            'expeditor_scara' => 'expeditor_scara', 
+            'expeditor_etaj' => 'expeditor_etaj', 
+            'expeditor_apartament' => 'expeditor_apartament', 
+            'destinatar_nume' => 'destinatar_nume', 
+            'destinatar_persoana_contact' => 'destinatar_persoana_contact', 
+            'destinatar_telefon' => 'destinatar_telefon', 
+            'destinatar_fax' => 'destinatar_fax', 
+            'destinatar_email' => 'destinatar_email', 
+            'destinatar_judet' => 'destinatar_judet', 
+            'destinatar_localitatea' => 'destinatar_localitatea', 
+            'destinatar_strada' => 'destinatar_strada', 
+            'destinatar_nr' => 'destinatar_nr', 
+            'destinatar_cod postal' => 'destinatar_cod', 
+            'destinatar_bloc' => 'destinatar_bloc', 
+            'destinatar_scara' => 'destinatar_scara', 
+            'destinatar_etaj' => 'destinatar_etaj', 
+            'destinatar_apartament' => 'destinatar_apartament',
+            'tip_serviciu' => 'tip_serviciu',
+            'banca' => 'banca',
             'iban' => 'IBAN',
-            'nr_plicuri' => 'Nr. Plicuri',
-            'nr_colete' => 'Nr. Colete',
-            'greutate' => 'Greutate',
-            'plata_expeditie' => 'Plata expeditie',
-            'ramburs_bani' => 'Ramburs(bani)',
-            'plata_ramburs_la' => 'Plata ramburs la',
-            'valoare_declarata' => 'Valoare declarata',
-            'persoana_contact_expeditor' => 'Persoana contact expeditor',
-            'observatii' => 'Observatii',
-            'continut' => 'Continut',
-            'nume_destinatar' => 'Nume destinatar',
-            'persoana_contact' => 'Persoana contact',
-            'telefon' => 'Telefon',
-            'fax' => 'Fax',
-            'email' => 'Email',
-            'judet' => 'Judet',
-            'localitate' => 'Localitatea',
-            'strada' => 'Strada',
-            'nr' => 'Nr',
-            'cod_postal' => 'Cod postal',
-            'bl' => 'Bloc',
-            'scara' => 'Scara',
-            'etaj' => 'Etaj',
-            'apartament' => 'Apartament',
-            'inaltime_pachet' => 'Inaltime pachet',
-            'latime_pachet' => 'Latime pachet',
-            'lungime_pachet' => 'Latime pachet',
-            'restituire' => 'Restituire',
-            'centru_cost' => 'Centru Cost',
-            'optiuni' => 'Optiuni',
-            'packing' => 'Packing',
-            'date_personale' => 'Date personale',
+            'nr_plicuri' => 'nr_plicuri',
+            'nr_colete' => 'nr_colete',
+            'greutate' => 'greutate',
+            'plata_expeditie' => 'plata_expeditie',
+            'ramburs' => 'ramburs',
+            'plata_ramburs_la' => 'plata_ramburs_la',
+            'valoare_declarata' => 'valoare_declarata',
+            'observatii' => 'observatii',
+            'continut' => 'continut',
+            'inaltime_pachet' => 'inaltime_pachet',
+            'latime_pachet' => 'latime_pachet',
+            'lungime_pachet' => 'lungime_pachet',
+            'restituire' => 'restituire',
+            'centru_cost' => 'centru_cost',
+            'awb_retur' => 'awb_retur',
+            'optiuni' => 'optiuni',
+            'packing' => 'packing',
+            'date personala packing' => 'date personala packing'
         ];
     }
 }
