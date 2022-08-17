@@ -130,6 +130,9 @@ class Order extends Endpoint
             ],
             'judet' => [ // required when field 'strada' is used
                 'required' => false
+            ],
+            'awb' => [ // awb number
+                'required' => false
             ]
         ];
     }
