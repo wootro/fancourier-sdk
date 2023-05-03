@@ -95,16 +95,6 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
         $serviceAllowedValues = self::SERVICE_ALLOWED_VALUES;
         unset($serviceAllowedValues['export']);
         foreach ($params['fisier'] as $serviceParams) {
-            $serviceType = $serviceParams['tip_serviciu'] ?? null;
-            if (
-                empty($serviceType)
-                ||
-                ! in_array($serviceType, $serviceAllowedValues, true)
-            ) {
-                throw new FanCourierInvalidParamException(
-                    "Must set a field 'tip_serviciu' with one of these values: " . implode(', ', $serviceAllowedValues)
-                );
-            }
 
             $this->validateAgainst($serviceParams, $this->getFieldRules());
         }
@@ -122,8 +112,7 @@ class GenerateAwb extends Endpoint implements CsvFileRequestInterface
         unset($serviceAllowedValues['export']);
         return [
             'tip_serviciu' => [
-                'required' => true,
-                'allowed_values' => $serviceAllowedValues
+                'required' => true            
             ],
             'banca' => [
                 'required' => false
